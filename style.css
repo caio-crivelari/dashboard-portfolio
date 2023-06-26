@@ -1,0 +1,358 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #22212c;
+  --bg-card-color: #302f3d;
+  --text-color: #837e9f;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+body * {
+  font-family: 'Merriweather Sans';
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: 'sideContent mainContent';
+}
+
+.sideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  grid-area: sideContent;
+}
+
+.sideCard {
+  flex-wrap: wrap;
+  min-width: 348px;
+  background-color: var(--bg-card-color);
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.profilePicture,
+.postAuthorPicture {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}
+
+.profilePicture {
+  border: 2px solid #00ff00;
+  margin: 32px 30px;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileDescription > h1 {
+  font-size: 23px;
+  line-height: 29px;
+}
+
+.profileDescription > p {
+  font-weight: 300;
+  font-size: 13px;
+  margin-bottom: 49px;
+}
+
+.linksCard {
+  display: flex;
+  flex-direction: column;
+  padding: 34px 40px 8px;
+}
+
+.linksDescription {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.linksDescription > p {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.techContent {
+  padding: 0px 30px 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.techCardTitle,
+.expCardTitle,
+.educationCardTitle {
+  padding: 30px 20px 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.techContent > div {
+  font-size: 10px;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #cb92b1;
+  text-align: center;
+  padding: 6px 7px;
+  border-radius: 30px;
+}
+
+.expContent {
+  padding: 10px 40px 15px;
+}
+
+.expList {
+  margin-bottom: 15px;
+}
+
+.expList > li {
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.expDescriptionList {
+  list-style-type: none;
+  font-weight: 300;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.educationContent {
+  padding: 10px 40px 15px;
+}
+
+.educationList > li {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.educationList {
+  margin-bottom: 15px;
+}
+
+.educationDescriptionList {
+  list-style-type: none;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.educationDescriptionList > li:nth-child(2) {
+  font-weight: 400;
+}
+
+.mainContent {
+  display: grid;
+  grid-area: mainContent;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'mainProjects mainProjects'
+    'project1 project2'
+    'recentPost recentPost'
+    'postContent postContent';
+  padding: 40px 40px 40px 20px;
+  gap: 30px;
+  height: fit-content;
+}
+
+.mainCard {
+  background: #302f3d;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.mainCardProjects {
+  grid-area: mainProjects;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.mainCardProjects > h1 {
+  font-size: 20px;
+}
+
+.mainCardProjects > a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.mainCardProjectDescription1 {
+  grid-area: project1;
+  padding: 30px;
+}
+
+.mainCardProjectDescription2 {
+  grid-area: project2;
+  padding: 30px;
+}
+
+.projectHeader {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+p.projectDescription {
+  margin: 20px 0px 30px 0px;
+  font-size: 14px;
+}
+
+.projectFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.projectInfo,
+.projectTechnology {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.mainCardRecentPosts {
+  grid-area: recentPost;
+}
+
+.mainCardRecentPosts {
+  padding: 30px;
+}
+
+.mainCardRecentPosts > h1 {
+  font-size: 20px;
+}
+
+.mainCardPost {
+  grid-area: postContent;
+}
+
+.mainCardPost {
+  display: flex;
+  gap: 20px;
+  padding: 30px 42px;
+  flex-wrap: wrap;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.postTitle h1 {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.postTitle p {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.postDescription {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 28px;
+}
+
+.hashtagsList {
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.hashtagLink {
+  display: flex;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.footer {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 1100px) {
+  .mainContent {
+    grid-template-areas:
+      'mainProjects mainProjects'
+      'project1 project1'
+      'project2 project2'
+      'recentPost recentPost'
+      'postContent postContent';
+  }
+}
+
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-areas:
+      'sideContent sideContent'
+      'mainContent mainContent';
+  }
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .mainContent {
+    width: fit-content;
+  }
+
+  .sideContent {
+    min-width: 530px;
+  }
+  .sideCard {
+    width: 100%;
+  }
+  .container {
+    width: fit-content;
+  }
+  .gridContainer {
+    width: fit-content;
+  }
+}
